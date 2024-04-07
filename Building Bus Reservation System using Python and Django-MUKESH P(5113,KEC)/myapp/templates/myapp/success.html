@@ -1,0 +1,19 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="color: rgb(255, 255, 255);">
+            <form action="{% url 'signout' %}" method="post">
+                {% csrf_token %} <b style="font-size: 2.5rem;">Reserved for You ! </b>
+                <p style="font-size: 1.5rem;text-align: center;padding-top: 30px;padding-bottom: 80px;">Your seat isn’t just a number; it’s a promise of discovery. Let’s make memories together.</p>
+                <div class="pull-right" >
+                    <button type="Submit" class="btn btn-success float-right" style="background-color: rgb(0, 0, 0); align-self: center;"  >Sign out</button>
+                </div>
+            </form>
+          
+            
+        </div>
+    </div>
+
+</div>
+{% endblock %}

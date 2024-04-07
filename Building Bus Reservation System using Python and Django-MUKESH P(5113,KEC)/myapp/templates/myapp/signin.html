@@ -1,0 +1,37 @@
+{% extends 'myapp/base.html' %} {% block content %}
+<div class="container  py-3">
+    <div class="card bg-info bg-gradient" >
+        <div class="card-body " >
+            <h2 class="my-3 text-center text-light">Bus Reservation System</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-5 col-md-7 col-sm-10 col-xs-12" >
+            <div class="card rounded-0" style="background-color: rgba(0, 0, 0, 0.5); box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5); padding: 10px;margin:auto;margin-top: 50px;width: 75%; ">
+                <div class="card-header">
+                    <div class="card-title h3 fw-bolde mb-0 text-center" style="padding: opx;color: rgb(241, 238, 238); font-size: 2rem; border-bottom: 4px solid rgba(255, 255, 255, 0.5);">LOGIN</div>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid" >
+                        <form action="{% url 'signin' %}" method="post" id="signin-form">
+                            {% csrf_token %}
+                            <div class="mb-3"  >
+                                <label for="username" class="control-label" style="font-size: 1.5rem; color: rgb(255, 255, 255);">Username:</label>
+                                <input name='name' class="form-control rounded-0"  type="text" id="username" required>
+                            </div>
+                            <div class="mb-3" >
+                                <label for="example-email-input" class="control-label" style="font-size: 1.5rem; color: rgb(255, 255, 255);">Password:</label>
+                                <input name='password' class="form-control rounded-0" type="password" id="password" required>
+                            </div>
+                        </form>
+                        <p style="color: rgb(255, 255, 255);">{{error}}</p>
+                    </div>
+                </div>
+                <div class="card-footer text-center" style="width: 200px; align-self: center;  ">
+                    <button class="btn btn-sm rounded-0 btn-primary btn-block w-100" form="signin-form" id="Login">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
